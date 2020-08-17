@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'ankushs.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgba(0,0,0,0.8)">
+      <a id="nav1" class="navbar-brand" href="{% url 'home' %}">FLIQAINDIA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a id="links1" class="nav-link active" href="#">CONTACT <span class="sr-only">(current)</span></a>
+          <a id="links1" class="nav-link" href="#">BLOGS</a>
+        </div>
+      </div>
+    </nav>
+
+<!-- Background -->
+<div class="container1">
+  <div class="site-title">
+      <h1>FLIQAINDIA</h1>
+      <hr>
+      <p>A Love Affair With Life</p><br>
+      <button type="submit" name="button"><a href="{% url 'home' %}">BACK TO MAIN SITE</a></button>
+  </div>
+  <div class="overlay"></div>
+</div>
+
+<!-- Blog Section -->
+
+<div class="Blogs">
+  <h1>Our Latest Blogs</h1>
+  <div class="blog-container">
+    {% for i in vlog %}
+    <div class="card" style="width: 30rem; padding:20px;">
+    <img src="/media/{{i.image}}" class="card-img-top" alt="...">
+    <div class="card-body" style="padding:60px;">
+      <h5 class="card-title">{{i.title}}</h5>
+      <p>{{i.date}}  By FLIQAINDIA</p>
+      <p class="card-text">{{i.description}}</p>
+      <a href="#" class="btn btn-primary">Explore More</a>
+    </div>
+  </div>
+      {% endfor %}
+  </div>
+
+</div>
+<!-- Lnks -->
+<div class="icons">
+  <ul>
+    <a href="#"><li class="facebook"><i class="fa fa-facebook"></i></li></a>
+    <a href="#"><li class="twitter"><i class="fa fa-twitter"></i></li></a>
+    <a href="#"><li class="whatsapp"><i class="fa fa-whatsapp"></i></li></a>
+    <a href="#"><li class="instagram"><i class="fa fa-instagram"></i></li></a>
+    <a href="#"><li class="linkedin"><i class="fa fa-linkedin"></i></li></a>
+  </ul>
+</div>
+
+
+<!-- Footer -->
+
+<footer>
+  <div class="footer">
+    <div class="footer-container">
+      <div class="footer-1">
+        <h3>Never miss a thing.</h3><br>
+        <input type="email" name="" value="" placeholder="Email address" >
+        <button type="button" name="button" style="">SignUp</button><br><br>
+        <h3>Be in Touch</h5><b3>
+        <div class="iconss">
+          <a href="#" style="background: #3b5998;"><i class="fa fa-facebook fa-lg"></i></a>
+          <a href="#" style="background:#55acee;"><i class="fa fa-twitter fa-lg"></i></a>
+          <a href="#" style="background: #25D366;"><i class="fa fa-whatsapp fa-lg"></i></a>
+          <a href="#" style="background:#007bb5;"><i class="fa fa-linkedin fa-lg"></i></a>
+          <a href="#" style="background:red"><i class="fa fa-youtube fa-lg"></i></a>
+        </div>
+
+      </div>
+      <div class="footer2">
+        <h2>Useful Links</h2><br>
+        <div class="li1">
+          <ul>
+            <a href="#" style="color:black;"><li>Services</li></a>
+            <a href="#" style="color:black;"><li>Blogs</li></a>
+            <a href="#" style="color:black;"><li>Tutorials</li></a>
+          </ul>
+        </div>
+        <div class="li2">
+          <ul>
+            <a href="#" style="color:black;"><li>Find Your Photographer</li></a>
+            <a href="#" style="color:black;"><li>Apply as freelancer</li></a>
+            <a href="#" style="color:black;"><li>SignUp</li></a>
+          </ul>
+        </div>
+      </div>
+      <div class="footer3" style="text-align:center">
+        <h3>Support</h3><br>
+        <ul>
+          <a href="#" style="color:black;"><li>ContactUs</li></a>
+          <a href="#" style="color:black;"><li>FeedBack</li></a>
+          <a href="#" style="color:black;"><li>FAQ</li></a>
+          <a href="#" style="color:black;"><li>Terms and Conditions</li></a>
+          <a href="#" style="color:black;"><li>Privacy and Policy</li></a>
+        </ul>
+      </div>
+    </div>
+    <p id="hh">COPYRIGHT © 2019 FLIQAINDIA PVT. LTD.     - ALL RIGHT RESERVED.</p>
+    <p id="hh">POWERED BY FLIQAINDIA PVT. LTD.</p>
+    <p id="hh">VERSION 5.0.0</p>
+  </div>
+
+
+
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
